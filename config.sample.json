@@ -1,0 +1,39 @@
+{
+	"output_dir": "/Users/user/Documents/Backups",
+	"proxy": {
+		"enabled": false,
+		"socks5": {
+			"host": "127.0.0.1",
+			"port": 1080
+		}
+	},
+	"items": [
+		{
+			"id": "a-website",
+			"host": "123.123.123.123",
+			"port": 22,
+			"username": "root",
+			"password": "",
+			"private_key_path": "/Users/user/.ssh/id_rsa",
+			"files": [
+				{
+					"id": "website-attachments",
+					"remote_path": "/var/www/html/attachments"
+				}
+			],
+			"mysql": [
+				{
+					"id": "website-databases",
+					"docker_container": "web_app_mysql_1",
+					"host": "localhost",
+					"user": "root",
+					"password": "root",
+					"exclude": [
+						"phpmyadmin"
+					],
+					"days_to_keep": 7
+				}
+			]
+		}
+	]
+}
